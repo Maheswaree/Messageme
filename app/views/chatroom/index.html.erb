@@ -1,12 +1,18 @@
 <div class="ui two column grid">
-<div class="ui small feed">
-<h4 class="ui header">Follwers</h4>
-<div class="event">
-  <div class="content">
-    <div class="summary">
-       <a>Hima</a> added <a>Mahi</a> as a friend
-    </div>
-  </div>
+  <div class="ui small feed">
+   <h4 class="ui header">Follwers</h4>
+    <div class="content">
+     <div class="ui feed">
+     <% @message.each do |message| %>
+      <div class="event">
+       <div class="content">
+        <div class="summary">
+       <em><%= message.userid.username %></em>: <%= message.body %>
+     </div>
+    </div> 
+   </div>
+  <%end%>
+ </div>
 </div>
 <div class="event">
   <div class="content">
